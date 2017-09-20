@@ -1,0 +1,6 @@
+framework module Pods_pinner {
+  umbrella header "Pods-pinner-umbrella.h"
+
+  export *
+  module * { export * }
+}
