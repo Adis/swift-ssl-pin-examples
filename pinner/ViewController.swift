@@ -12,7 +12,8 @@ import Alamofire
 
 class ViewController: UIViewController {
     
-    var sessionManager: SessionManager = SessionManager()
+    var sessionManager = SessionManager()
+    let customSessionDelegate = CustomSessionDelegate()
     
     @IBOutlet weak var resultLabel: UILabel!
 
@@ -43,7 +44,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func testWithAlamofireDefaultPin() {
-        
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
             "infinum.co": .pinPublicKeys(
                 publicKeys: ServerTrustPolicy.publicKeys(),
@@ -61,13 +61,10 @@ class ViewController: UIViewController {
         sessionManager.request("https://infinum.co").response { response in
             self.showResult(success: response.response != nil)
         }
-        
     }
     
     @IBAction func testWithCustomPolicyManager() {
-    
         // Note the lack of trust policies here, we moved the behavior into the policy manager itself
-        
         sessionManager = SessionManager(
             serverTrustPolicyManager: CustomServerTrustPolicyManager(
                 policies: [:]
@@ -77,7 +74,6 @@ class ViewController: UIViewController {
         sessionManager.request("https://infinum.co").response { response in
             self.showResult(success: response.response != nil)
         }
-        
     }
     
     @IBAction func testWithNSURLSessionPin() {
@@ -90,6 +86,19 @@ class ViewController: UIViewController {
             }
         })
         task.resume()
+    }
+    
+    @IBAction func testWithCustomSessionDelegate() {
+        sessionManager = SessionManager(
+            delegate: customSessionDelegate, // Feeding our own session delegate
+            serverTrustPolicyManager: CustomServerTrustPolicyManager(
+                policies: [:]
+            )
+        )
+        
+        sessionManager.request("https://infinum.co").response { response in
+            self.showResult(success: response.response != nil)
+        }
     }
 
 }
@@ -105,14 +114,14 @@ extension ViewController: URLSessionDelegate {
         }
         
         // Compare the server certificate with our own stored
-        if let serverCertificate = SecTrustGetCertificateAtIndex(trust, 0) {
-            let serverCertificateData = SecCertificateCopyData(serverCertificate) as Data
-
-            if pinnedCertificates().contains(serverCertificateData) {
-                completionHandler(.useCredential, URLCredential(trust: trust))
-                return
-            }
-        }
+//        if let serverCertificate = SecTrustGetCertificateAtIndex(trust, 0) {
+//            let serverCertificateData = SecCertificateCopyData(serverCertificate) as Data
+//
+//            if pinnedCertificates().contains(serverCertificateData) {
+//                completionHandler(.useCredential, URLCredential(trust: trust))
+//                return
+//            }
+//        }
         
         // Or, compare the public keys
         if let serverCertificate = SecTrustGetCertificateAtIndex(trust, 0), let serverCertificateKey = publicKey(for: serverCertificate) {
