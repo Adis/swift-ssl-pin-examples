@@ -64,10 +64,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction func testWithCustomPolicyManager() {
-        // Note the lack of trust policies here, we moved the behavior into the policy manager itself
+        let serverTrustPolicies: [String: ServerTrustPolicy] = [
+            "infinum.co": .pinPublicKeys(
+                publicKeys: ServerTrustPolicy.publicKeys(),
+                validateCertificateChain: true,
+                validateHost: true
+            )
+        ]
+        
         sessionManager = SessionManager(
             serverTrustPolicyManager: CustomServerTrustPolicyManager(
-                policies: [:]
+                policies: serverTrustPolicies
             )
         )
         

@@ -12,13 +12,10 @@ import Alamofire
 class CustomServerTrustPolicyManager: ServerTrustPolicyManager {
 
     override func serverTrustPolicy(forHost host: String) -> ServerTrustPolicy? {
-        // You can change the hostname here to force a failure
-        if host == "infinum.co" {
-            return .pinPublicKeys(
-                publicKeys: ServerTrustPolicy.publicKeys(),
-                validateCertificateChain: true,
-                validateHost: true
-            )
+        // Check if we have a policy already defined, otherwise just kill the connection
+        if let policy = super.serverTrustPolicy(forHost: host) {
+            print(policy)
+            return policy
         } else {
             return .customEvaluation({ (_, _) -> Bool in
                 return false
