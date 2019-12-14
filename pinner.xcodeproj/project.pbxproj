@@ -11,6 +11,7 @@
 		490CFE8F1F71783100EB83BF /* CustomServerTrustPolicyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CFE8E1F71783100EB83BF /* CustomServerTrustPolicyManager.swift */; };
 		490CFE911F72574E00EB83BF /* infinumco.crt in Resources */ = {isa = PBXBuildFile; fileRef = 490CFE901F72574E00EB83BF /* infinumco.crt */; };
 		490CFE951F72D63300EB83BF /* CustomSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490CFE941F72D63300EB83BF /* CustomSessionDelegate.swift */; };
+		497E3CA123A550420091C5BD /* so.crt in Resources */ = {isa = PBXBuildFile; fileRef = 497E3CA023A550420091C5BD /* so.crt */; };
 		49F5C8411F6BCA2700D3F8FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F5C8401F6BCA2700D3F8FB /* AppDelegate.swift */; };
 		49F5C8431F6BCA2700D3F8FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F5C8421F6BCA2700D3F8FB /* ViewController.swift */; };
 		49F5C8461F6BCA2700D3F8FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F5C8441F6BCA2700D3F8FB /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		490CFE8E1F71783100EB83BF /* CustomServerTrustPolicyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomServerTrustPolicyManager.swift; sourceTree = "<group>"; };
 		490CFE901F72574E00EB83BF /* infinumco.crt */ = {isa = PBXFileReference; lastKnownFileType = file; path = infinumco.crt; sourceTree = "<group>"; };
 		490CFE941F72D63300EB83BF /* CustomSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSessionDelegate.swift; sourceTree = "<group>"; };
+		497E3CA023A550420091C5BD /* so.crt */ = {isa = PBXFileReference; lastKnownFileType = file; path = so.crt; sourceTree = "<group>"; };
 		49F5C83D1F6BCA2700D3F8FB /* pinner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pinner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F5C8401F6BCA2700D3F8FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49F5C8421F6BCA2700D3F8FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		49F5C83F1F6BCA2700D3F8FB /* pinner */ = {
 			isa = PBXGroup;
 			children = (
+				497E3CA023A550420091C5BD /* so.crt */,
 				490CFE901F72574E00EB83BF /* infinumco.crt */,
 				49F5C8401F6BCA2700D3F8FB /* AppDelegate.swift */,
 				49F5C8421F6BCA2700D3F8FB /* ViewController.swift */,
@@ -109,7 +112,6 @@
 				49F5C83A1F6BCA2700D3F8FB /* Frameworks */,
 				49F5C83B1F6BCA2700D3F8FB /* Resources */,
 				BE4B414D13246490758256F8 /* [CP] Embed Pods Frameworks */,
-				C9FC67947D7D59CBDCD1F22C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -159,6 +161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				497E3CA123A550420091C5BD /* so.crt in Resources */,
 				490CFE911F72574E00EB83BF /* infinumco.crt in Resources */,
 				49F5C84B1F6BCA2700D3F8FB /* LaunchScreen.storyboard in Resources */,
 				49F5C8481F6BCA2700D3F8FB /* Assets.xcassets in Resources */,
@@ -193,7 +196,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-pinner/Pods-pinner-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-pinner/Pods-pinner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -202,22 +205,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pinner/Pods-pinner-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C9FC67947D7D59CBDCD1F22C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-pinner/Pods-pinner-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-pinner/Pods-pinner-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

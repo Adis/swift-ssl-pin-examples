@@ -17,6 +17,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resultLabel: UILabel!
 
+    let domain = "https://www.stackoverflow.com"
+    let shortDomain = "stackoverflow.com"
+    let certificateURL = Bundle.main.url(forResource: "so", withExtension: "crt")
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -32,20 +36,20 @@ class ViewController: UIViewController {
             resultLabel.text = "🚫 Request failed"
         }
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
             self?.resultLabel.text = ""
         }
     }
     
     @IBAction func testWithNoPin() {
-        Alamofire.request("https://infinum.co").response { response in
+        Alamofire.request(domain).response { response in
             self.showResult(success: response.response != nil)
         }
     }
     
     @IBAction func testWithAlamofireDefaultPin() {
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
-            "infinum.co": .pinPublicKeys(
+            shortDomain: .pinPublicKeys(
                 publicKeys: ServerTrustPolicy.publicKeys(),
                 validateCertificateChain: true,
                 validateHost: true
@@ -58,14 +62,14 @@ class ViewController: UIViewController {
             )
         )
         
-        sessionManager.request("https://infinum.co").response { response in
+        sessionManager.request(domain).response { response in
             self.showResult(success: response.response != nil)
         }
     }
     
     @IBAction func testWithCustomPolicyManager() {
         let serverTrustPolicies: [String: ServerTrustPolicy] = [
-            "infinum.co": .pinPublicKeys(
+            shortDomain: .pinPublicKeys(
                 publicKeys: ServerTrustPolicy.publicKeys(),
                 validateCertificateChain: true,
                 validateHost: true
@@ -78,13 +82,13 @@ class ViewController: UIViewController {
             )
         )
         
-        sessionManager.request("https://infinum.co").response { response in
+        sessionManager.request(domain).response { response in
             self.showResult(success: response.response != nil)
         }
     }
     
     @IBAction func testWithNSURLSessionPin() {
-        let url = URL(string: "https://infinum.co")! // Pardon my assumption
+        let url = URL(string: domain)! // Pardon my assumption
         let session = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         
         let task = session.dataTask(with: url, completionHandler: { (data, response, error) in
@@ -96,14 +100,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func testWithCustomSessionDelegate() {
+        let serverTrustPolicies: [String: ServerTrustPolicy] = [
+            shortDomain: .pinPublicKeys(
+                publicKeys: ServerTrustPolicy.publicKeys(),
+                validateCertificateChain: true,
+                validateHost: true
+            )
+        ]
+
         sessionManager = SessionManager(
             delegate: customSessionDelegate, // Feeding our own session delegate
             serverTrustPolicyManager: CustomServerTrustPolicyManager(
-                policies: [:]
+                policies: serverTrustPolicies
             )
         )
         
-        sessionManager.request("https://infinum.co").response { response in
+        sessionManager.request(domain).response { response in
             self.showResult(success: response.response != nil)
         }
     }
@@ -144,7 +156,7 @@ extension ViewController: URLSessionDelegate {
     fileprivate func pinnedCertificates() -> [Data] {
         var certificates: [Data] = []
         
-        if let pinnedCertificateURL = Bundle.main.url(forResource: "infinumco", withExtension: "crt") {
+        if let pinnedCertificateURL = certificateURL {
             do {
                 let pinnedCertificateData = try Data(contentsOf: pinnedCertificateURL)
                 certificates.append(pinnedCertificateData)
@@ -159,7 +171,7 @@ extension ViewController: URLSessionDelegate {
     fileprivate func pinnedKeys() -> [SecKey] {
         var publicKeys: [SecKey] = []
         
-        if let pinnedCertificateURL = Bundle.main.url(forResource: "infinumco", withExtension: "crt") {
+        if let pinnedCertificateURL = certificateURL {
             do {
                 let pinnedCertificateData = try Data(contentsOf: pinnedCertificateURL) as CFData
                 if let pinnedCertificate = SecCertificateCreateWithData(nil, pinnedCertificateData), let key = publicKey(for: pinnedCertificate) {
