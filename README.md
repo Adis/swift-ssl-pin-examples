@@ -2,7 +2,7 @@
 
 These are the code examples to follow the blog article found here: https://infinum.co/the-capsized-eight/266
 
-Reach out on Twitter if you need any help: https://twitter.com/aboutadis
+Found an issue? Open up an issue here on Github :)
 
 # License
 
