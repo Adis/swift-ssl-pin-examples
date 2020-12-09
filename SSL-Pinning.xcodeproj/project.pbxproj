@@ -3,16 +3,20 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		4909EE5324FBBF8900254EF3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4909EE5224FBBF8900254EF3 /* AppDelegate.swift */; };
 		4909EE5524FBBF8900254EF3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4909EE5424FBBF8900254EF3 /* SceneDelegate.swift */; };
-		4909EE5724FBBF8900254EF3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4909EE5624FBBF8900254EF3 /* ViewController.swift */; };
 		4909EE5A24FBBF8900254EF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4909EE5824FBBF8900254EF3 /* Main.storyboard */; };
 		4909EE5C24FBBF8A00254EF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4909EE5B24FBBF8A00254EF3 /* Assets.xcassets */; };
 		4909EE5F24FBBF8A00254EF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4909EE5D24FBBF8A00254EF3 /* LaunchScreen.storyboard */; };
+		4909EE6724FBC01500254EF3 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4909EE6624FBC01500254EF3 /* ListViewController.swift */; };
+		4909EE6924FBC1EA00254EF3 /* PinMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4909EE6824FBC1EA00254EF3 /* PinMethod.swift */; };
+		4909EE6B24FBC58400254EF3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4909EE6A24FBC58400254EF3 /* DetailViewController.swift */; };
+		4984853525812F560020E115 /* DetailViewController+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4984853425812F560020E115 /* DetailViewController+Alamofire.swift */; };
+		4984853925813DFB0020E115 /* stackoverflow.cer in Resources */ = {isa = PBXBuildFile; fileRef = 4984853825813DFB0020E115 /* stackoverflow.cer */; };
 		69477CCAFA447E036EE392DD /* Pods_SSL_Pinning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94F54E02DC6843F3C9BFE0F /* Pods_SSL_Pinning.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,11 +25,15 @@
 		4909EE4F24FBBF8900254EF3 /* SSL-Pinning.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SSL-Pinning.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4909EE5224FBBF8900254EF3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4909EE5424FBBF8900254EF3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4909EE5624FBBF8900254EF3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4909EE5924FBBF8900254EF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4909EE5B24FBBF8A00254EF3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4909EE5E24FBBF8A00254EF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4909EE6024FBBF8A00254EF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4909EE6624FBC01500254EF3 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		4909EE6824FBC1EA00254EF3 /* PinMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMethod.swift; sourceTree = "<group>"; };
+		4909EE6A24FBC58400254EF3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		4984853425812F560020E115 /* DetailViewController+Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Alamofire.swift"; sourceTree = "<group>"; };
+		4984853825813DFB0020E115 /* stackoverflow.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = stackoverflow.cer; sourceTree = "<group>"; };
 		B4C94644EF85FD4430E1BAF1 /* Pods-SSL-Pinning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSL-Pinning.release.xcconfig"; path = "Target Support Files/Pods-SSL-Pinning/Pods-SSL-Pinning.release.xcconfig"; sourceTree = "<group>"; };
 		D94F54E02DC6843F3C9BFE0F /* Pods_SSL_Pinning.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSL_Pinning.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -63,15 +71,27 @@
 		4909EE5124FBBF8900254EF3 /* SSL-Pinning */ = {
 			isa = PBXGroup;
 			children = (
+				4984853725813DFB0020E115 /* Certificates */,
 				4909EE5224FBBF8900254EF3 /* AppDelegate.swift */,
 				4909EE5424FBBF8900254EF3 /* SceneDelegate.swift */,
-				4909EE5624FBBF8900254EF3 /* ViewController.swift */,
+				4909EE6824FBC1EA00254EF3 /* PinMethod.swift */,
+				4909EE6624FBC01500254EF3 /* ListViewController.swift */,
+				4909EE6A24FBC58400254EF3 /* DetailViewController.swift */,
+				4984853425812F560020E115 /* DetailViewController+Alamofire.swift */,
 				4909EE5824FBBF8900254EF3 /* Main.storyboard */,
 				4909EE5B24FBBF8A00254EF3 /* Assets.xcassets */,
 				4909EE5D24FBBF8A00254EF3 /* LaunchScreen.storyboard */,
 				4909EE6024FBBF8A00254EF3 /* Info.plist */,
 			);
 			path = "SSL-Pinning";
+			sourceTree = "<group>";
+		};
+		4984853725813DFB0020E115 /* Certificates */ = {
+			isa = PBXGroup;
+			children = (
+				4984853825813DFB0020E115 /* stackoverflow.cer */,
+			);
+			path = Certificates;
 			sourceTree = "<group>";
 		};
 		7B03B37FEADF405124A6C5BC /* Frameworks */ = {
@@ -88,7 +108,6 @@
 				2CD77A3E8EDD25ABC2B48B29 /* Pods-SSL-Pinning.debug.xcconfig */,
 				B4C94644EF85FD4430E1BAF1 /* Pods-SSL-Pinning.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -155,6 +174,7 @@
 				4909EE5F24FBBF8A00254EF3 /* LaunchScreen.storyboard in Resources */,
 				4909EE5C24FBBF8A00254EF3 /* Assets.xcassets in Resources */,
 				4909EE5A24FBBF8900254EF3 /* Main.storyboard in Resources */,
+				4984853925813DFB0020E115 /* stackoverflow.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,8 +227,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4909EE5724FBBF8900254EF3 /* ViewController.swift in Sources */,
 				4909EE5324FBBF8900254EF3 /* AppDelegate.swift in Sources */,
+				4909EE6724FBC01500254EF3 /* ListViewController.swift in Sources */,
+				4984853525812F560020E115 /* DetailViewController+Alamofire.swift in Sources */,
+				4909EE6B24FBC58400254EF3 /* DetailViewController.swift in Sources */,
+				4909EE6924FBC1EA00254EF3 /* PinMethod.swift in Sources */,
 				4909EE5524FBBF8900254EF3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,7 +377,8 @@
 			baseConfigurationReference = 2CD77A3E8EDD25ABC2B48B29 /* Pods-SSL-Pinning.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "SSL-Pinning/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -362,6 +386,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adis.SSL-Pinning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -372,7 +397,8 @@
 			baseConfigurationReference = B4C94644EF85FD4430E1BAF1 /* Pods-SSL-Pinning.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "SSL-Pinning/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -380,6 +406,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.adis.SSL-Pinning";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
