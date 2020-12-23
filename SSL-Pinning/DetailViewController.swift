@@ -25,13 +25,14 @@ class DetailViewController: UIViewController {
     }
 
     @IBAction private func testPin() {
+        let pinning = pinEnabledSwitch.isOn
         switch method {
         case .alamofire:
-            requestWithAlamofire(pinning: pinEnabledSwitch.isOn)
+            requestWithAlamofire(pinning: pinning)
         case .NSURLSession:
-            requestWithURLSessionDelegate(pinning: pinEnabledSwitch.isOn)
-        default:
-            showResult(success: false)
+            requestWithURLSessionDelegate(pinning: pinning)
+        case .customPolicyManager:
+            requestWithCustomPolicyManager(pinning: pinning)
         }
     }
 
