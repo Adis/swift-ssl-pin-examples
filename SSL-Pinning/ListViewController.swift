@@ -29,8 +29,9 @@ class ListViewController: UIViewController {
     }
 
     private func _showDetailViewController(method: PinMethod) {
-        let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController")
-        navigationController?.pushViewController(detailViewController!, animated: true)
+        let detailViewController = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        detailViewController.method = method
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 
 }
