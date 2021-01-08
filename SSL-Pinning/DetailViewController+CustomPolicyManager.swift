@@ -9,6 +9,12 @@
 import Foundation
 import Alamofire
 
+final class DenyEvaluator: ServerTrustEvaluating {
+    func evaluate(_ trust: SecTrust, forHost host: String) throws {
+        throw AFError.serverTrustEvaluationFailed(reason: .noPublicKeysFound)
+    }
+}
+
 /// This is the most advanced and most flexible use of pinning, and it's highly unlikely you will
 /// ever need to dig this deep unless you want to support wildcard domains, individual matching
 /// policies or similar.
@@ -23,12 +29,13 @@ final class CustomServerTrustPolicyManager: ServerTrustManager {
     override func serverTrustEvaluator(forHost host: String) throws -> ServerTrustEvaluating? {
         var policy: ServerTrustEvaluating?
 
+        /// Smarter check would be beneficial here, theoretically, MITM attack can have an URL containing this string
         if host.contains("stackoverflow.com") {
             /// You could dig even deeper and write your own evaluator
             policy = PublicKeysTrustEvaluator()
         } else {
-            /// Intentionally decided to let all requests pass here
-            policy = DefaultTrustEvaluator()
+            /// Deny all other connections
+            policy = DenyEvaluator()
         }
 
         return policy
