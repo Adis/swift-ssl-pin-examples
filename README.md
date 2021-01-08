@@ -4,6 +4,32 @@ Code examples for SSL pinning in iOS with and without Alamofire.
 
 More info in the blog article here: https://infinum.co/the-capsized-eight/266
 
+## Method 1 - Using Alamofire
+
+```
+DetailViewController+Alamofire.swift
+```
+
+This example demonstrates how to use the most basic pinning methods available in Alamofire, almost always, this will be enough for your use-case.
+
+## Method 2 - Using a custom policy manager with Alamofire
+
+```
+DetailViewController+CustomPolicyManager.swift
+```
+
+This method demonstrates a more fine grained pinning, as well as restoring the behavior what AFNetworking used to do - denying connections for any domains that have not been pinned.
+
+## Method 3 - URLSessionDelegate
+
+```
+DetailViewController+URLSessionDelegate.swift
+```
+
+This is the manual method, not using Alamofire. Some of the code has been borrowed from Alamofire, but will work without the library if your networking is just based on `URLSession`.
+
+## Contributing
+
 Found an issue? Open up an issue here on Github :)
 
 # License
