@@ -69,7 +69,7 @@ extension DetailViewController: URLSessionDelegate {
     private func pinnedCertificates() -> [Data] {
         var certificates: [Data] = []
 
-        if let pinnedCertificateURL = Bundle.main.url(forResource: "stackoverflow", withExtension: "cer") {
+        if let pinnedCertificateURL = Bundle.main.url(forResource: "stackexchange", withExtension: "cer") {
             do {
                 let pinnedCertificateData = try Data(contentsOf: pinnedCertificateURL)
                 certificates.append(pinnedCertificateData)
@@ -84,7 +84,7 @@ extension DetailViewController: URLSessionDelegate {
     private func pinnedKeys() -> [SecKey] {
         var publicKeys: [SecKey] = []
 
-        if let pinnedCertificateURL = Bundle.main.url(forResource: "stackoverflow", withExtension: "cer") {
+        if let pinnedCertificateURL = Bundle.main.url(forResource: "stackexchange", withExtension: "cer") {
             do {
                 let pinnedCertificateData = try Data(contentsOf: pinnedCertificateURL) as CFData
                 if let pinnedCertificate = SecCertificateCreateWithData(nil, pinnedCertificateData), let key = publicKey(for: pinnedCertificate) {

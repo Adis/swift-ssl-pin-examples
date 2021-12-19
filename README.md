@@ -28,6 +28,16 @@ DetailViewController+URLSessionDelegate.swift
 
 This is the manual method, not using Alamofire. Some of the code has been borrowed from Alamofire, but will work without the library if your networking is just based on `URLSession`.
 
+## Updating the certificate
+
+You may want to update or test using another certificate.
+To do this, use the following `openssl` command:
+```
+echo | openssl s_client -servername stackoverflow.com -connect stackoverflow.com:443 | \
+openssl x509 -outform der -out stackexchange.cer
+```
+
+
 ## Contributing
 
 Found an issue? Open up an issue here on Github :)
