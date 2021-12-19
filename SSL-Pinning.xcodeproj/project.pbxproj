@@ -16,7 +16,7 @@
 		4909EE6924FBC1EA00254EF3 /* PinMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4909EE6824FBC1EA00254EF3 /* PinMethod.swift */; };
 		4909EE6B24FBC58400254EF3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4909EE6A24FBC58400254EF3 /* DetailViewController.swift */; };
 		4984853525812F560020E115 /* DetailViewController+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4984853425812F560020E115 /* DetailViewController+Alamofire.swift */; };
-		4984853925813DFB0020E115 /* stackoverflow.cer in Resources */ = {isa = PBXBuildFile; fileRef = 4984853825813DFB0020E115 /* stackoverflow.cer */; };
+		4984853925813DFB0020E115 /* stackexchange.cer in Resources */ = {isa = PBXBuildFile; fileRef = 4984853825813DFB0020E115 /* stackexchange.cer */; };
 		4984853C258140770020E115 /* DetailViewController+CustomPolicyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4984853B258140770020E115 /* DetailViewController+CustomPolicyManager.swift */; };
 		498E34C22593655500224893 /* DetailViewController+URLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498E34C12593655500224893 /* DetailViewController+URLSessionDelegate.swift */; };
 		69477CCAFA447E036EE392DD /* Pods_SSL_Pinning.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D94F54E02DC6843F3C9BFE0F /* Pods_SSL_Pinning.framework */; };
@@ -35,7 +35,7 @@
 		4909EE6824FBC1EA00254EF3 /* PinMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinMethod.swift; sourceTree = "<group>"; };
 		4909EE6A24FBC58400254EF3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		4984853425812F560020E115 /* DetailViewController+Alamofire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+Alamofire.swift"; sourceTree = "<group>"; };
-		4984853825813DFB0020E115 /* stackoverflow.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = stackoverflow.cer; sourceTree = "<group>"; };
+		4984853825813DFB0020E115 /* stackexchange.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = stackexchange.cer; sourceTree = "<group>"; };
 		4984853B258140770020E115 /* DetailViewController+CustomPolicyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+CustomPolicyManager.swift"; sourceTree = "<group>"; };
 		498E34C12593655500224893 /* DetailViewController+URLSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailViewController+URLSessionDelegate.swift"; sourceTree = "<group>"; };
 		B4C94644EF85FD4430E1BAF1 /* Pods-SSL-Pinning.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSL-Pinning.release.xcconfig"; path = "Target Support Files/Pods-SSL-Pinning/Pods-SSL-Pinning.release.xcconfig"; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		4984853725813DFB0020E115 /* Certificates */ = {
 			isa = PBXGroup;
 			children = (
-				4984853825813DFB0020E115 /* stackoverflow.cer */,
+				4984853825813DFB0020E115 /* stackexchange.cer */,
 			);
 			path = Certificates;
 			sourceTree = "<group>";
@@ -180,7 +180,7 @@
 				4909EE5F24FBBF8A00254EF3 /* LaunchScreen.storyboard in Resources */,
 				4909EE5C24FBBF8A00254EF3 /* Assets.xcassets in Resources */,
 				4909EE5A24FBBF8900254EF3 /* Main.storyboard in Resources */,
-				4984853925813DFB0020E115 /* stackoverflow.cer in Resources */,
+				4984853925813DFB0020E115 /* stackexchange.cer in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
